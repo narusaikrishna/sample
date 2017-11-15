@@ -4,31 +4,15 @@ import { moviesApiCall } from '../action/ActionForMovies';
 const width = Dimensions.get('window').width;
 import { connect } from "react-redux";
 import { SearchBar } from "react-native-elements";
-//const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 class Movies extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   isLoading: true
-    // }
+  
   }
 
   componentDidMount() {
     this.props.LoadMovies()
-    // return fetch('https://facebook.github.io/react-native/movies.json')
-    //   .then((response) => response.json())
-    //   .then((responseJson) => {
-    //     let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    //     this.setState({
-    //       isLoading: false,
-    //       dataSource: ds.cloneWithRows(responseJson.movies),
-    //     }, function() {
-    //       // do something with new state
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
+  
   }
 
   render() {
@@ -74,7 +58,7 @@ class Movies extends Component {
         keyExtractor = {(item, index) => item.title}
         renderItem={({item}) =>(
         <View style={{shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,shadowColor: 'red',
+    shadowOpacity: 0.2,shadowColor: 'green',
     elevation: 2,}}>
           <Text style={{fontSize:18,textAlign:'center',padding:5}}>{item.title}, {item.releaseYear}
         </Text>
