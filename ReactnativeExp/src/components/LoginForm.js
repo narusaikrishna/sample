@@ -9,6 +9,10 @@ import {
   TouchableHighlight
 } from "react-native";
 
+import { NativeModules } from 'react-native';
+var CalendarManager = NativeModules.CalendarManager;
+
+
 // create a component
 class LoginForm extends Component {
   constructor(props) {
@@ -22,6 +26,10 @@ class LoginForm extends Component {
   }
   onValidation=()=>{
 
+  }
+  componentWillMount()
+  {
+    CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey');
   }
   onLogin = () => {};
   render() {

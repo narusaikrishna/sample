@@ -1,13 +1,17 @@
 import { AppRegistry,StyleSheet } from 'react-native';
-import { App } from './App';
 import React, { Component } from 'react';
-import LoginForm from './LoginForm';
-
-
+import LoginForm from './src/components/LoginForm';
+import { Provider } from 'react-redux';
+import {createStore} from 'redux';
+import Movies from './src/components/DemoApiCall';
+import configureStore from './src/store/configStore';
+const store = configureStore();
 // create a component
 const abc = () => {
     return (
-        <LoginForm  textOnOpen='submit'/>
+        <Provider store={store}>
+        <Movies/>
+        </Provider>
     );
 };
 
